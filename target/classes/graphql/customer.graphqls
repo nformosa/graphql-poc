@@ -1,0 +1,33 @@
+type Query {
+    customers: [Customer]
+    customer(id: Int) : Customer
+}
+
+type Mutation {
+    addCustomer(customer: CustomerRecord): Customer
+    updateCustomer(customer: CustomerRecord): Customer
+    login(record: LoginRecord) : Customer
+}
+
+type Customer {
+    id : ID
+    firstName : String
+    lastName: String
+    email: String
+    pwd: String
+    token: String
+}
+
+
+input CustomerRecord {
+    firstName : String
+    lastName: String
+    email: String
+    pwd: String
+}
+
+
+input LoginRecord {
+    email: String
+    pwd: String
+}
